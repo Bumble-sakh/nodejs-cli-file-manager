@@ -4,8 +4,7 @@
   "description": "CLI File Manager using Node.js APIs.",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "start:bumble": "node src/index.js -- --username=Bumble"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
