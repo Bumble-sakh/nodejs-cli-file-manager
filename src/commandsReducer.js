@@ -1,6 +1,15 @@
 import { stdin } from "process";
 import { up, cd, ls } from "./commands/nwd/index.js";
-import { cat, add, rn, cp, mv, rm, mkdir } from "./commands/files/index.js";
+import {
+  cat,
+  add,
+  rn,
+  cp,
+  mv,
+  rm,
+  mkdir,
+  rmdir,
+} from "./commands/files/index.js";
 import { os } from "./commands/os/index.js";
 import { hash } from "./commands/hash/index.js";
 import { compress, decompress } from "./commands/brotli/index.js";
@@ -199,6 +208,17 @@ export const commandReducer = async ({ command, payload }) => {
       }
 
       await mkdir(...payload);
+
+      printCurrentDir();
+      break;
+
+    case COMMANDS.rmdir:
+      if (payload.length !== 1) {
+        stdin.emit("invalidInput");
+        break;
+      }
+
+      await rmdir(...payload);
 
       printCurrentDir();
       break;

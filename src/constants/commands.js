@@ -15,4 +15,5 @@ export const COMMANDS = {
   mv: 13,
   rm: 14,
   mkdir: 15,
+  rmdir: 16,
 };
